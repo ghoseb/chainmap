@@ -83,7 +83,7 @@
   (hashCode [_]
     (.hashCode ms))
   (equals [_ x]
-    (.equals (apply merge (reverse ms)) x)))
+    (.equals (or (apply merge (reverse ms)) {}) x)))
 
 
 (defmethod clojure.core/print-method ChainMap
