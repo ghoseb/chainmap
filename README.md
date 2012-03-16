@@ -5,6 +5,8 @@ When looking up keys in a ChainMap the individual maps are searched in successio
 
 Useful when you need to quickly create multiple contexts without the O(n) overhead of using `merge`.
 
+*Caveat* - The current implementation is not performant.
+
 ## Usage
 
     (ns foo
