@@ -77,7 +77,7 @@
   (invoke [this k]
     (.valAt this k))
   
-  Object
+  ;; Object
   (toString [_]
     (str "#ChainMap<" ms ">"))
   (hashCode [_]
@@ -88,7 +88,11 @@
 
 (defmethod clojure.core/print-method ChainMap
   [chainmap writer]
-  (.write writer (str "#ChainMap<" (maps chainmap) ">")))
+  (.write writer (str "#chainmap.core.ChainMap[" (maps chainmap) "]")))
+
+(defmethod clojure.core/print-dup ChainMap
+  [chainmap writer]
+  (.write writer (str "#chainmap.core.ChainMap[" (maps chainmap) "]")))
 
 
 (defn chainmap
